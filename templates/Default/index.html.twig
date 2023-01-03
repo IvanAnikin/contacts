@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>{{ page_title }}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ absolute_url('bower_components/bootstrap/dist/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ absolute_url('css/style.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="{{ absolute_url('bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{ absolute_url('bower_components/bootstrap/dist/js/bootstrap.js')}}"></script>
+    <script src="{{ absolute_url('bower_components/moment/min/moment.min.js')}}"></script>
+    <script src="https://nette.github.io/resources/js/netteForms.min.js')}}"></script>
+    <script src="{{ absolute_url('js/nette.ajax.js')}}"></script>
+    <script src="{{ absolute_url('js/main.js?v1')}}"></script>
+    <script src="{{ absolute_url('js/functions.js')}}"></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <a class="navbar-brand text-wrap" style="color:grey" href="/"><h3>{{ page_title }}</h3></a>
+
+        <div id="navbar" class="navbar-toggler">
+            <ul class="d-flex navbar-nav">
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<div class="container theme-showcase">
+
+    {% for flash in flashes %}
+        <div class="alert {{ flash[1] }}">{{ flash[0] }}</div>
+    {% endfor %}
+
+
+    <div style="max-width: 100%">
+
+        <table class="table table-hover" style="margin-top:50px">
+            <tr id="first_row">
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Phone number</th>
+                <th>Email</th>
+                <th>Note</th>
+            </tr>
+
+            <tr>
+                <form name="newEmployeeForm">
+                    <td><div class="form-group"><input name="name" ></div></td>
+                    <td><div class="form-group"><input name="surname" ></div></td>
+                    <td><div class="form-group"><input name="phone" ></div></td>
+                    <td><div class="form-group"><input name="mail" ></div></td>
+                    <td><div class="form-group"><input name="note" ></div></td>
+                    <td><input type="submit" name="action" class="btn btn-info" value="Add" /></td>
+                </form>
+            </tr>
+
+            {% for contact in contacts %}
+                <tr >
+
+                    <form name="editEmployeeForm">
+                        <td><div class="form-group"><input name="name" value="{{ contact.name }}"></div></td>
+                        <td><div class="form-group"><input name="surname" value="{{ contact.surname }}"></div></td>
+                        <td><div class="form-group"><input name="phone" value="{{ contact.phone }}"></div></td>
+                        <td><div class="form-group"><input name="mail" value="{{ contact.mail }}"></div></td>
+                        <td><div class="form-group"><input name="note" value="{{ contact.note }}"></div></td>
+                        <td style="display:none"><div class="form-group"><input name="id" value="{{ contact.id }}"></div></td>
+                        <td><input type="submit" name="action" class="btn btn-info" value="Edit" /></td>
+                        <td><input type="submit" name="action"  class="btn btn-dark" value="Delete" /></td>
+                    </form>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <hr>
+    <footer>
+        <p>&copy; {{date}} ivan-anikin.com</p>
+    </footer>
+</div>
+</body>
+</html>
+

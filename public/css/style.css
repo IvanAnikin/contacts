@@ -1,0 +1,32 @@
+body {
+	padding-bottom: 30px;
+}
+.first-element{
+	padding-top: 50px;
+}
+.theme-dropdown .dropdown-menu {
+	position: static;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+	margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+	width: auto;
+}
+
+.form-search-size{
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+	#first_row{
+		display: none;
+	}
+	td{
+		display: inline-block;
+	}
+}

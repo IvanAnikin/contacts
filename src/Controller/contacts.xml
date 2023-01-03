@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contacts status="ok">
+
+    <record man_no="101">
+        <name>Ivan</name>
+        <surname>Anikin</surname>
+        <phone>730953393</phone>
+        <mail>ivan.anikin@outlook.com</mail>
+        <note>Note</note>
+        <id>0</id>
+        
+    </record>
+
+    <record man_no="102">
+        <name>Tasha</name>
+        <surname>Smith</surname>
+        <phone>123123123</phone>
+        <mail>Tasha.Smith@outlook.com</mail>
+        <note>Yeah</note>
+        <id>1</id>
+    </record>
+
+    <record man_no="102">
+        <name>Peter</name>
+        <surname>Pan</surname>
+        <phone>333333333</phone>
+        <mail>peter.pan@outlook.com</mail>
+        <note>A note</note>
+        <id>2</id>
+    </record>
+
+</contacts>
